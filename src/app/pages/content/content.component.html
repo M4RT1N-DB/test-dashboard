@@ -1,0 +1,71 @@
+<nz-layout>
+    <nz-content>
+        <div class="inner-content">
+            <div class="header">
+                <h3 class="title">Today Stadistics</h3>
+            </div>
+            <div class="cards">
+                <div class="card-group" *ngFor="let item of data">
+                    <div class="card">
+                        <div class="content">
+                            <span>{{item.title}}</span>
+                            <p>{{item.cant}}</p>
+                        </div>
+                        <img src="assets/images/NetSales.svg" alt="Sales">
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard1">
+                <div class="d1-title">
+                    <span>Net Sales</span>
+                </div>
+                <div class="d1-content">
+                    <div class="d1-data">
+                        <div class="a">
+                            <h5>This month</h5>
+                            <h4>$3,150.45</h4>
+                        </div>
+                        <div class="b">
+                            <span>44.37%</span>
+                            <span>From previous period</span>
+                        </div>
+                        <div class="c">
+                            <div>View Details</div>
+                        </div>
+                        <div class="d">
+                            <h5>Last month</h5>
+                            <h4>$1,950.30</h4>
+                        </div>
+                    </div>
+                    <div class="d1-graphic">
+                        <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels"
+                            [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend"
+                            [chartType]="lineChartType" [plugins]="lineChartPlugins" style="display: block;"></canvas>
+
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard2">
+                <div class="d2-title">
+                    <span>Reports</span>
+                </div>
+                <div class="d2-content">
+                    <div class="cards-dash">
+                        <div class="graph-card" *ngFor="let item of dataDashBoard2">
+                            <div class="sub-title">
+                                <span>{{item.title}}</span>
+                                <span>{{item.price}}</span>
+                            </div>
+                            <div class="sub-content">
+                                <canvas baseChart [datasets]="item.chartData" [labels]="item.chartLabels"
+                                    [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend"
+                                    [chartType]="lineChartType" [plugins]="lineChartPlugins"
+                                    style="display: block;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nz-content>
+</nz-layout>
