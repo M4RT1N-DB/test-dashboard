@@ -268,7 +268,7 @@ nz-content {
 .cards-dash {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+  grid-template-columns: repeat(auto-fit, minmax(100%, 2fr));
   grid-gap: 1rem;
 }
 .graph-card {
@@ -285,6 +285,7 @@ nz-content {
 @media screen and (max-width: 709px) {
   .graph-card {
     width: 100%;
+    height: 100%;
   }
 }
 .sub-title {
@@ -307,6 +308,7 @@ nz-content {
 @media screen and (max-width: 709px) {
   .sub-content {
     width: 100%;
+    height: 100%;
   }
 }
 
@@ -316,5 +318,6 @@ nz-content {
 @media screen and (max-width: 709px) {
   .sub-content canvas {
     width: 100%;
+    height: 100%;
   }
 }
