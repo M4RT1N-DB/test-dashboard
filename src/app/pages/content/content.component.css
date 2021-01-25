@@ -1,5 +1,6 @@
 nz-content {
   margin: 24px;
+  background-color: #fff;
 }
 
 .inner-content {
@@ -8,6 +9,15 @@ nz-content {
 }
 .header {
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.title {
+  color: #000000;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 19px;
 }
 
 .cards {
@@ -18,14 +28,35 @@ nz-content {
 }
 
 .card {
-    padding: 16px;
-    border-radius: 5px;
-    background-color: #FFF;
-    box-shadow: 0 4px 10px 0 rgba(20, 19, 34, 0.03), 0 0 10px 0 rgba(20, 19, 34, 0.02);
-    border: solid 2px #E4E9F0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  padding: 16px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px 0 rgba(20, 19, 34, 0.03),
+    0 0 10px 0 rgba(20, 19, 34, 0.02);
+  border: solid 2px #e4e9f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content span {
+  color: #000000;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 15px;
+}
+.content p {
+  margin-top: 12px;
+  margin-bottom: 0;
+  color: #000000;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+.content img {
+  vertical-align: middle;
+  border-style: none;
 }
 .dashboard1 {
   width: 100%;
@@ -38,91 +69,160 @@ nz-content {
     0 0 10px 0 rgba(20, 19, 34, 0.02);
   border: solid 2px #e4e9f0;
 }
-.d1-tile {
+@media screen and (max-width: 700px) {
+  .dashboard1 {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.d1-title {
   width: 100%;
+  height: 10%;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-content: center;
   text-align: center;
   align-items: center;
 }
-.a h5{
-    color: #000000;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0;
-    line-height: 16px;
-}
-.a h4{
-    color: #000000;
-    font-size: 22.75px;
-    font-weight: 600;
-    letter-spacing: 0;
-    margin-top: 15px;
-    line-height: 28px;
-}
-.b span{
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0;
-    line-height: 16px;
-}
-.c{
-    box-sizing: border-box;
-    height: 30.01px;
-    width: 111.21px;
-    border: 1px solid #DF1683;
-    border-radius: 2.76px;
-    background-color: #FFFFFF;
-    justify-content: center;
+@media screen and (max-width: 700px) {
+  .d1-title {
+    height: 10%;
     display: flex;
-    text-align: center;
-    align-content: center;
-    align-items: center;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    color: #DF1683;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0;
-    line-height: 15px;
+    flex-direction: column;
+  }
 }
-.d h5{
-    color: #000000;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0;
-    line-height: 16px;
+.d1-title span {
+  color: #000000;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 24px;
 }
-.d h4{
-    color: #000000;
-    font-size: 22.75px;
-    font-weight: 600;
-    letter-spacing: 0;
-    margin-top: 15px;
-    line-height: 28px;
+.a h5 {
+  color: #000000;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 16px;
+}
+.a h4 {
+  color: #000000;
+  font-size: 22.75px;
+  font-weight: 600;
+  letter-spacing: 0;
+  margin-top: 15px;
+  line-height: 28px;
+}
+.b span {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 16px;
+}
+@media screen and (max-width: 700px) {
+  .b {
+    display: none;
+  }
+}
+.c {
+  box-sizing: border-box;
+  height: 30.01px;
+  width: 111.21px;
+  border: 1px solid #df1683;
+  border-radius: 2.76px;
+  background-color: #ffffff;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  color: #df1683;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 15px;
+}
+@media screen and (max-width: 700px) {
+  .c {
+    display: none;
+  }
+}
+.d h5 {
+  color: #000000;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 16px;
+}
+.d h4 {
+  color: #000000;
+  font-size: 22.75px;
+  font-weight: 600;
+  letter-spacing: 0;
+  margin-top: 15px;
+  line-height: 28px;
 }
 .d1-content {
   width: 100%;
   background-color: #ffffff;
   display: flex;
+  flex-direction: row;
   padding-top: 5px;
   height: 90%;
 }
+@media screen and (max-width: 700px) {
+  .d1-content {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .d1-data {
   width: 30%;
-  min-height: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   padding: 20px 20px 20px 0px;
-
 }
+
+@media screen and (max-width: 700px) {
+  .d1-data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px 0;
+    height: auto;
+  }
+}
+
 .d1-graphic {
   width: 70%;
   height: 100%;
 }
+@media screen and (max-width: 700px) {
+  .d1-graphic {
+    width: 100%;
+    height: 90%;
+  }
+}
 canvas {
   display: block;
-  max-width: 100%;
   max-height: 100%;
+}
+@media screen and (max-width: 700px) {
+  .canvas {
+    display: block;
+    width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+  }
 }
 .dashboard2 {
   height: auto;
@@ -134,16 +234,33 @@ canvas {
   box-shadow: 0 4px 10px 0 rgba(20, 19, 34, 0.03),
     0 0 10px 0 rgba(20, 19, 34, 0.02);
   border: solid 2px #e4e9f0;
-
 }
 .d2-title {
   width: 100%;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-content: center;
   text-align: center;
   align-items: center;
-
+}
+@media screen and (max-width: 700px) {
+  .d2-title {
+    flex-direction: column;
+  }
+}
+.d2-title span{
+  color: #000000;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 24px;
+}
+@media screen and (max-width: 700px) {
+  .d2-title span {
+    height: auto;
+    margin-bottom: 10px;
+  }
 }
 .d2-content {
   width: 100%;
@@ -153,7 +270,6 @@ canvas {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
   grid-gap: 1rem;
-
 }
 .graph-card {
   padding: 16px 0;
@@ -164,9 +280,9 @@ canvas {
   box-sizing: border-box;
   max-height: 280.33px;
   border-radius: 5.19px;
-
 }
 .sub-title {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 20px;

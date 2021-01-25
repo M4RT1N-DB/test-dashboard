@@ -144,12 +144,12 @@ export class ContentComponent implements OnInit {
 
   lineChartColors: Color[] = [
     {
-      backgroundColor: 'rgba(103, 58, 183, .1)',
-      borderColor: 'rgb(103, 58, 183)',
-      pointBackgroundColor: 'rgb(103, 58, 183)',
+      backgroundColor: 'transparent',
+      borderColor: 'rgba(229,31,137)',
+      pointBackgroundColor: 'rgba(229,31,137)',
       pointBorderColor: '#000',
       pointHoverBackgroundColor: '#000',
-      pointHoverBorderColor: 'rgba(103, 58, 183, .8)',
+      pointHoverBorderColor: 'rgba(229,31,137)',
     },
   ];
   //----A boolean for whether or not a legend should be displayed above the chart.
