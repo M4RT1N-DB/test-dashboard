@@ -212,12 +212,12 @@ nz-content {
     height: 90%;
   }
 }
-canvas {
+.d1-graphic canvas {
   display: block;
   max-height: 100%;
 }
 @media screen and (max-width: 700px) {
-  .canvas {
+  .d1-graphic .canvas {
     display: block;
     width: 100%;
     min-height: 100%;
@@ -249,7 +249,7 @@ canvas {
     flex-direction: column;
   }
 }
-.d2-title span{
+.d2-title span {
   color: #000000;
   font-size: 20px;
   font-weight: 600;
@@ -278,14 +278,21 @@ canvas {
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  max-height: 280.33px;
+  min-height: 280.33px;
+  width: 100%;
   border-radius: 5.19px;
+}
+@media screen and (max-width: 709px) {
+  .graph-card {
+    width: 100%;
+  }
 }
 .sub-title {
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 20px;
+  height: 10%;
 }
 .sub-title span {
   color: #000000;
@@ -294,9 +301,20 @@ canvas {
   letter-spacing: 0;
   line-height: 22px;
 }
+.sub-content{
+  width: 100%;
+}
+@media screen and (max-width: 709px) {
+  .sub-content {
+    width: 100%;
+  }
+}
 
 .sub-content canvas {
   display: block;
-  max-width: 100%;
-  max-height: 100%;
+}
+@media screen and (max-width: 709px) {
+  .sub-content canvas {
+    width: 100%;
+  }
 }
