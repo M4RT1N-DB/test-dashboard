@@ -1,6 +1,7 @@
 nz-content {
-  margin: 24px;
-  background-color: #fff;
+  height: 100%;
+  position: relative;
+  padding: 10px; 
 }
 
 .inner-content {
@@ -109,6 +110,7 @@ nz-content {
   letter-spacing: 0;
   line-height: 16px;
 }
+
 .a h4 {
   color: #000000;
   font-size: 22.75px;
@@ -116,6 +118,11 @@ nz-content {
   letter-spacing: 0;
   margin-top: 15px;
   line-height: 28px;
+}
+@media screen and (max-width: 700px) {
+  .a h4 {
+    font-size: 15px;
+  }
 }
 .b span {
   font-size: 13px;
@@ -168,6 +175,11 @@ nz-content {
   margin-top: 15px;
   line-height: 28px;
 }
+@media screen and (max-width: 700px) {
+  .d h4 {
+    font-size: 15px;
+  }
+}
 .d1-content {
   width: 100%;
   background-color: #ffffff;
@@ -178,6 +190,7 @@ nz-content {
 }
 @media screen and (max-width: 700px) {
   .d1-content {
+    width: 100%;
     height: 90%;
     display: flex;
     flex-direction: column;
@@ -211,7 +224,6 @@ nz-content {
 @media screen and (max-width: 700px) {
   .d1-graphic {
     width: 100%;
-    height: 90%;
   }
 }
 .d1-graphic canvas {
@@ -219,10 +231,9 @@ nz-content {
   max-height: 100%;
 }
 @media screen and (max-width: 700px) {
-  .d1-graphic .canvas {
+  .d1-graphic canvas {
     display: block;
     width: 100%;
-    min-height: 100%;
     max-height: 100%;
   }
 }
@@ -270,7 +281,7 @@ nz-content {
 .cards-dash {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
+  grid-template-columns: repeat(auto-fit, minmax(212px, 2fr));
   grid-gap: 1rem;
 }
 .graph-card {
