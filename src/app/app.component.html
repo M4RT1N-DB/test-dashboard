@@ -1,3 +1,43 @@
 <nz-layout class="app-layout">
-<app-content></app-content>
+  <nz-sider nzCollapsible="true" [(nzCollapsed)]="isCollapsed" [nzCollapsedWidth]=width nzWidth="256px"
+    [nzTrigger]="null" nzBreakpoint='md'>
+    <div class="container">
+      <div class="header">
+        <div class="logo">
+          <img [src]="isCollapsed?'':'assets/images/eatos_logo.svg'">
+        </div>
+      </div>
+      <div class="content">
+        <ul nz-menu nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+          <li nz-submenu nzOpen nzTitle="Content" nzIcon="dashboard">
+            <ul>
+              <li nz-menu-item nzMatchRouter>
+                <a href="" class="btn" [routerLink]="['/content']">Content</a><br>
+              </li>
+              <li nz-menu-item nzMatchRouter>
+                <a href="" class="btn">ABC</a>
+              </li>
+              <li nz-menu-item nzMatchRouter>
+                <a href="" class="btn">DEF</a>
+              </li>
+            </ul>
+          </li>
+          <li nz-submenu nzOpen nzTitle="Test Router" nzIcon="form">
+            <ul>
+              <li nz-menu-item nzMatchRouter>
+                <a href="" class="btn" [routerLink]="['/test']">Test</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="hide-sideBar" (click)="isCollapsed = !isCollapsed" [style]="isCollapsed?'width:64px':'width:256px'">
+      <i class="icn" nz-icon [nzType]="isCollapsed?'right':'left'"></i>
+    </div>
+  </nz-sider>
+  <nz-layout class="right-layout" [style]="isCollapsed?'margin-left: 64px;':'margin-left: 256px;'">
+    <router-outlet></router-outlet>
+  </nz-layout>
+
 </nz-layout>
