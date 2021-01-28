@@ -5,28 +5,44 @@
       <div class="header">
         <div class="logo">
           <img [src]="isCollapsed?'':'assets/images/eatos_logo.svg'">
+
         </div>
       </div>
       <div class="content">
         <ul nz-menu nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-          <li nz-submenu nzOpen nzTitle="Content" nzIcon="dashboard">
+          <li nz-menu-item nzDisabled="true" nzActive=false>
+            <div>DASHBOARD</div>
+          </li>
+          <li nz-menu-item>
+            <span class="c">
+              <div [style]="isCollapsed?'display:none':''">
+                <span> Home</span>
+                <nz-badge [nzCount]="count" nzShowZero
+                  [nzStyle]="{ color:'#fff', backgroundColor:'#41b883'  }"></nz-badge>
+              </div>
+              <div>
+
+                <i nz-icon nzType="home" nzTheme="outline"></i>
+                <nz-badge *ngIf="isCollapsed" [nzCount]="count" nzShowZero
+                  [nzStyle]="{ color:'#fff', backgroundColor:'#41b883',transform: 'translate(15%, -25%)'}"></nz-badge>
+              </div>
+            </span>
+          </li>
+          <li class="itemPrincipal" nz-menu-item nz-tooltip nzTooltipPlacement="right" [nzTooltipTitle]="isCollapsed ? 'Navigation One' : ''">
+            <i nz-icon nzType="mail"></i>
+            <span>Navigation One</span>
+          </li>
+          <li class="itemPrincipal" nz-submenu nzTitle="Navigation Two" nzIcon="appstore">
             <ul>
-              <li nz-menu-item nzMatchRouter>
-                <a href="" class="btn" [routerLink]="['/content']">Content</a><br>
-              </li>
-              <li nz-menu-item nzMatchRouter>
-                <a href="" class="btn">ABC</a>
-              </li>
-              <li nz-menu-item nzMatchRouter>
-                <a href="" class="btn">DEF</a>
-              </li>
+              <li nz-menu-item>Option 5</li>
+              <li nz-menu-item>Option 6</li>
             </ul>
           </li>
-          <li nz-submenu nzOpen nzTitle="Test Router" nzIcon="form">
+          <li class="itemPrincipal" nz-submenu nzTitle="Navigation Three" nzIcon="setting">
             <ul>
-              <li nz-menu-item nzMatchRouter>
-                <a href="" class="btn" [routerLink]="['/test']">Test</a>
-              </li>
+              <li nz-menu-item>Option 9</li>
+              <li nz-menu-item>Option 10</li>
+              <li nz-menu-item>Option 11</li>
             </ul>
           </li>
         </ul>

@@ -17,13 +17,18 @@ import { ContentComponent } from './pages/content/content.component';
 
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { ChartsModule } from "ng2-charts";
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { TestComponent } from './pages/test/test.component';
 
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContentComponent
+    ContentComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,10 @@ registerLocaleData(en);
     NzLayoutModule,
     NzMenuModule,
     NzIconModule,
-    ChartsModule
+    ChartsModule,
+    NzCollapseModule,
+    NzBadgeModule,
+    NzToolTipModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

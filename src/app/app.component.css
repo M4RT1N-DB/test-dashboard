@@ -25,6 +25,42 @@ nz-sider {
 .hide-sideBar:hover {
   background-color: #d0d2d6;
 }
+
+.header {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem 0 1.86rem;
+}
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 1.6rem;
+  white-space: nowrap;
+  width: 100%;
+}
+
+/*--------------*/
+.c{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+/*---------------*/
+.itemPrincipal{
+  margin-bottom: 0 !important;
+    transition: none !important;
+    background: transparent !important;
+    color: #595c97;
+}
+.itemPrincipal ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/*--------------*/
 .icn {
   display: inline-block;
   color: inherit;
@@ -35,3 +71,4 @@ nz-sider {
   vertical-align: -0.125em;
   text-rendering: optimizeLegibility;
 }
+
