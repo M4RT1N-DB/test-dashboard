@@ -10,10 +10,10 @@
       </div>
       <div class="content">
         <ul nz-menu nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-          <li nz-menu-item nzDisabled="true" nzActive=false>
-            <div>DASHBOARD</div>
+          <li nz-menu-item nzDisabled="true" nzActive=false >
+            <div [style]="isCollapsed?'display:none':''">DASHBOARD</div>
           </li>
-          <li nz-menu-item>
+          <li nz-menu-item [style]="isCollapsed?'padding-left: -20px;':''"> 
             <span class="c">
               <div [style]="isCollapsed?'display:none':''">
                 <span> Home</span>
@@ -22,23 +22,24 @@
               </div>
               <div>
 
-                <i nz-icon nzType="home" nzTheme="outline"></i>
+                <i nz-icon nzType="home" nzTheme="outline" ></i>
                 <nz-badge *ngIf="isCollapsed" [nzCount]="count" nzShowZero
                   [nzStyle]="{ color:'#fff', backgroundColor:'#41b883',transform: 'translate(15%, -25%)'}"></nz-badge>
               </div>
             </span>
           </li>
-          <li class="itemPrincipal" nz-menu-item nz-tooltip nzTooltipPlacement="right" [nzTooltipTitle]="isCollapsed ? 'Navigation One' : ''">
+          <li [style]="isCollapsed?'padding-left: -20px;':''" class="itemPrincipal" nz-menu-item nz-tooltip nzTooltipPlacement="right" [nzTooltipTitle]="isCollapsed ? 'Navigation One' : ''">
             <i nz-icon nzType="mail"></i>
             <span>Navigation One</span>
           </li>
-          <li class="itemPrincipal" nz-submenu nzTitle="Navigation Two" nzIcon="appstore">
+          <li [style]="isCollapsed?'margin-left:-20px;':''" class="itemPrincipal" nz-submenu nzTitle="Navigation Two" nzIcon="appstore">
             <ul>
               <li nz-menu-item>Option 5</li>
               <li nz-menu-item>Option 6</li>
             </ul>
           </li>
-          <li class="itemPrincipal" nz-submenu nzTitle="Navigation Three" nzIcon="setting">
+          <li  [style]="isCollapsed?'margin-left: -20px;':''" class="itemPrincipal" nz-submenu nzTitle="Navigation Three" nzIcon="setting">
+           
             <ul>
               <li nz-menu-item>Option 9</li>
               <li nz-menu-item>Option 10</li>
