@@ -54,10 +54,12 @@
                 <nz-table #basicTable [nzData]="employeesList">
                     <thead>
                         <tr>
+                            <th></th>
                             <th>Name</th>
                             <th>Contact Info</th>
-                            <th>Clocked In</th>
                             <th></th>
+                            <th>Clocked In</th>
+                            
                             <th>Clocked Out</th>
                             <th>Break Time</th>
                             <th>Hours Worked</th>
@@ -67,15 +69,16 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let data of employeesList">
+                            <td></td>
                             <td>{{data.name}}</td>
                             <td>{{data.contactInfo}}</td>
                             <td><button class="viewHoursButton">View Hours</button></td>
                             <td>{{data.clockedIn}}</td>
 
                             <td>{{data.clockedOut}}</td>
-                            <td>{{data.breakTime}}</td>
+                            <td>{{data.breakTime}}m</td>
                             <td>{{data.HoursWorked.hours}}h {{data.HoursWorked.min}}m</td>
-                            <td><button class="statusInfo">{{data.status}} </button></td>
+                            <td><button [ngStyle]="{'background-color':data.status.Color}" class="statusInfo">{{data.status.status}} </button></td>
                             <td class="actionsIcons"><i nz-icon nzType="edit" nzTheme="outline"
                                     style="color: #34b484;"></i><i nz-icon nzType="delete" nzTheme="outline" style="color: red;"></i></td>
                         </tr>

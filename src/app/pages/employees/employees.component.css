@@ -106,6 +106,10 @@ nz-content {
   width: 33.33%;
   display: flex;
   margin-top: auto;
+
+}
+.searchName nz-input-group {
+  border-radius: 20px !important;
 }
 .addEmployee {
   display: flex;
@@ -136,6 +140,7 @@ nz-content {
 }
 th{
   text-align: center !important;
+  font-weight: 600!important;
 }
 td{
   text-align: center;
