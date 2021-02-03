@@ -1,0 +1,150 @@
+nz-content {
+  min-height: 100vh;
+  position: relative;
+  padding: 10px;
+
+  background-color: #f5f4f7;
+}
+
+.inner-content {
+  height: 100%;
+  width: 100%;
+  background-color: #f5f4f7;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  background-color: #f5f4f7;
+}
+.title {
+  color: #000000;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 19px;
+  background-color: #f5f4f7;
+}
+
+.cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(212px, 1fr));
+  grid-gap: 16px 24px;
+  background-color: #f5f4f7;
+}
+
+.card {
+  padding: 16px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px 0 rgba(20, 19, 34, 0.03),
+    0 0 10px 0 rgba(20, 19, 34, 0.02);
+  border: solid 2px #e4e9f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content span {
+  color: #000000;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 15px;
+}
+.content p {
+  margin-top: 12px;
+  margin-bottom: 0;
+  color: #000000;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+.content img {
+  vertical-align: middle;
+  border-style: none;
+}
+.employeesList {
+  margin-top: 20px;
+  padding: 16px;
+  background-color: #fff;
+}
+.employeesList-title {
+  color: #000000;
+  font-size: 12px;
+  font-weight: 600;
+}
+.employeesList-search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+.search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 60%;
+}
+.searchDate {
+  width: 33.33%;
+
+  display: flex;
+  flex-direction: column;
+}
+.searchStatus {
+  width: 33.33%;
+  margin: 0 10px;
+
+  display: flex;
+  flex-direction: column;
+}
+.searchName {
+  width: 33.33%;
+  display: flex;
+  margin-top: auto;
+}
+.addEmployee {
+  display: flex;
+  margin-top: auto;
+}
+.addEmployee button {
+  margin: 0 2.5px 0 2.5px;
+  background-color: #34b484;
+  border-radius: 20px;
+  border: 1px solid transparent;
+}
+.inputNum{
+  padding: 10px;
+}
+
+.statusInfo{
+  width: 100%;
+  color: #fff;
+  background-color: #34b484;
+  border-radius: 5px;
+  border: 1px solid transparent;
+}
+.viewHoursButton{
+  color: #e53b8d;
+  border: 1px solid #e53b8d;
+  background-color: transparent;
+  border-radius: 5px;
+}
+th{
+  text-align: center !important;
+}
+td{
+  text-align: center;
+}
+.actionsIcons{
+  display: flex;
+  justify-content: space-around;
+  margin-top: auto;
+}
+.statusInfo:hover{
+  cursor: pointer;
+}

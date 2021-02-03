@@ -11,16 +11,25 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconsProviderModule } from './icons-provider.module';
+
+import { ContentComponent } from './pages/content/content.component';
+import { EmployeesComponent } from './pages/employees/employees.component';
+
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
-import { ContentComponent } from './pages/content/content.component';
-
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { ChartsModule } from "ng2-charts";
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
-import { TestComponent } from './pages/test/test.component';
+import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+
 
 registerLocaleData(en);
 
@@ -28,7 +37,7 @@ registerLocaleData(en);
   declarations: [
     AppComponent,
     ContentComponent,
-    TestComponent
+    EmployeesComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +52,14 @@ registerLocaleData(en);
     ChartsModule,
     NzCollapseModule,
     NzBadgeModule,
-    NzToolTipModule
+    NzToolTipModule,
+    NzDatePickerModule,
+    NzSelectModule,
+    NzInputModule,
+    NzButtonModule,
+    NzInputNumberModule,
+    NzTableModule,
+    NzDividerModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

@@ -7,9 +7,7 @@ nz-sider {
   position: fixed;
   left: 0;
   overflow-x: hidden;
-}
-.app-layout {
-  height: 100vh;
+  background-color: #fff;
 }
 .hide-sideBar {
   position: fixed;
@@ -19,8 +17,9 @@ nz-sider {
   line-height: 48px;
   text-align: center;
   cursor: pointer;
+  border-top: 1px solid rgb(238, 237, 237);
 
-  background-color: #f2f4f8;
+  background-color: #fff;
 }
 .hide-sideBar:hover {
   background-color: #d0d2d6;
@@ -40,30 +39,24 @@ nz-sider {
   white-space: nowrap;
   width: 100%;
 }
-
-/*--------------*/
-.c{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-/*---------------*/
-.itemPrincipal{
+.itemPrincipal {
   margin-bottom: 0 !important;
-    transition: none !important;
-    background: transparent !important;
-    color: #595c97;
+  transition: none !important;
+  background: transparent !important;
+  color: #595c97;
 }
-.itemPrincipal ul{
+.infoTitle {
+  margin: 0 !important;
+  cursor: default;
+}
+.itemPrincipal ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-/*--------------*/
-
-
-/*-----------*/
+ul li {
+  margin-top: 0 !important;
+}
 .icn {
   display: inline-block;
   color: inherit;
@@ -74,4 +67,3 @@ nz-sider {
   vertical-align: -0.125em;
   text-rendering: optimizeLegibility;
 }
-

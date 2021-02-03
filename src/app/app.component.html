@@ -10,36 +10,83 @@
       </div>
       <div class="content">
         <ul nz-menu nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-          <li nz-menu-item nzDisabled="true" nzActive=false >
+          <li nz-menu-item nzDisabled="true" nzActive=false class="infoTitle">
             <div [style]="isCollapsed?'display:none':''">DASHBOARD</div>
           </li>
-          <li nz-menu-item [style]="isCollapsed?'padding-left: -20px;':''"> 
-            <span class="c">
-              <div [style]="isCollapsed?'display:none':''">
-                <span> Home</span>
-                <nz-badge [nzCount]="count" nzShowZero
-                  [nzStyle]="{ color:'#fff', backgroundColor:'#41b883'  }"></nz-badge>
-              </div>
-              <div>
 
-                <i nz-icon nzType="home" nzTheme="outline" ></i>
-                <nz-badge *ngIf="isCollapsed" [nzCount]="count" nzShowZero
-                  [nzStyle]="{ color:'#fff', backgroundColor:'#41b883',transform: 'translate(15%, -25%)'}"></nz-badge>
-              </div>
-            </span>
+          <li nz-menu-item [style]="isCollapsed?'padding-left: -20px;':''" class="itemPrincipal">
+            <i nz-icon nzType="home"></i>
+            <span> Home<a [routerLink]="['/content']"></a></span>
           </li>
-          <li [style]="isCollapsed?'padding-left: -20px;':''" class="itemPrincipal" nz-menu-item nz-tooltip nzTooltipPlacement="right" [nzTooltipTitle]="isCollapsed ? 'Navigation One' : ''">
-            <i nz-icon nzType="mail"></i>
-            <span>Navigation One</span>
-          </li>
-          <li [style]="isCollapsed?'margin-left:-20px;':''" class="itemPrincipal" nz-submenu nzTitle="Navigation Two" nzIcon="appstore">
+          <li [style]="isCollapsed?'margin-left:-20px;':''" class="itemPrincipal" nz-submenu
+            nzTitle="Analythics y Reports" nzIcon="bar-chart">
             <ul>
-              <li nz-menu-item>Option 5</li>
-              <li nz-menu-item>Option 6</li>
+              <li nz-menu-item>Option 1</li>
+              <li nz-menu-item>Option 2</li>
             </ul>
           </li>
-          <li  [style]="isCollapsed?'margin-left: -20px;':''" class="itemPrincipal" nz-submenu nzTitle="Navigation Three" nzIcon="setting">
-           
+          <li [style]="isCollapsed?'margin-left: -20px;':''" class="itemPrincipal" nz-submenu nzTitle="Labor Reports"
+            nzIcon="fund">
+            <ul>
+              <li nz-menu-item>Option 9</li>
+              <li nz-menu-item>Option 10</li>
+              <li nz-menu-item>Option 11</li>
+            </ul>
+          </li>
+          <li [style]="isCollapsed?'margin-left: -20px;':''" class="itemPrincipal" nz-submenu nzTitle="Sales"
+            nzIcon="file-markdown">
+            <ul>
+              <li nz-menu-item>Option 9</li>
+              <li nz-menu-item>Option 10</li>
+              <li nz-menu-item>Option 11</li>
+            </ul>
+          </li>
+          <li nz-menu-item nzDisabled="true" nzActive=false class="infoTitle">
+            <div [style]="isCollapsed?'display:none':''">RESTAURANT SETUP</div>
+          </li>
+          <li [style]="isCollapsed?'margin-left:-20px;':''" class="itemPrincipal" nz-submenu nzTitle="Restaurant"
+            nzIcon="appstore">
+            <ul>
+              <li nz-menu-item>Option 1</li>
+              <li nz-menu-item>Option 2</li>
+            </ul>
+          </li>
+          <li [style]="isCollapsed?'margin-left: -20px;':''" class="itemPrincipal" nz-submenu nzTitle="Menu"
+            nzIcon="setting">
+            <ul>
+              <li nz-menu-item>Option 9</li>
+              <li nz-menu-item>Option 10</li>
+              <li nz-menu-item>Option 11</li>
+            </ul>
+          </li>
+          <li [style]="isCollapsed?'margin-left: -20px;':''" class="itemPrincipal" nz-submenu nzTitle="Employees"
+            nzIcon="setting">
+            <ul>
+              <li nz-menu-item>Employee List<a [routerLink]="['/employees']"></a></li>
+              <li nz-menu-item>Roles</li>
+              <li nz-menu-item>Permissions</li>
+              <li nz-menu-item>Tip Management</li>
+              <li nz-menu-item>Break Management</li>
+              <li nz-menu-item>Overtime Setting</li>
+            </ul>
+          </li>
+          <li [style]="isCollapsed?'margin-left:-20px;':''" class="itemPrincipal" nz-submenu nzTitle="Hardware"
+            nzIcon="appstore">
+            <ul>
+              <li nz-menu-item>Option 1</li>
+              <li nz-menu-item>Option 2</li>
+            </ul>
+          </li>
+          <li [style]="isCollapsed?'margin-left: -20px;':''" class="itemPrincipal" nz-submenu nzTitle="Connect & Learn"
+            nzIcon="setting">
+            <ul>
+              <li nz-menu-item>Option 9</li>
+              <li nz-menu-item>Option 10</li>
+              <li nz-menu-item>Option 11</li>
+            </ul>
+          </li>
+          <li [style]="isCollapsed?'margin-left: -20px;':''" class="itemPrincipal" nz-submenu nzTitle="Integrations"
+            nzIcon="setting">
             <ul>
               <li nz-menu-item>Option 9</li>
               <li nz-menu-item>Option 10</li>

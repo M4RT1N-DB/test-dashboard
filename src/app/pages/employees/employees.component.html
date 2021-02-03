@@ -1,0 +1,88 @@
+<nz-content>
+    <div class="inner-content">
+        <div class="header">
+            <h3 class="title">EMPLOYEES | EMPLOYEE LIST</h3>
+        </div>
+        <div class="cards">
+            <div class="card" *ngFor="let item of data">
+                <div class="content">
+                    <span>{{item.title}}</span>
+                    <p>{{item.cant}}</p>
+                </div>
+                <img src="assets/images/NetSales.svg" alt="Sales">
+            </div>
+        </div>
+        <div class="employeesList">
+            <div class="employeesList-title">
+                <span>Employee List</span>
+            </div>
+            <div class="employeesList-search">
+                <div class="search">
+                    <div class="searchDate">
+                        <span>Date</span>
+                        <nz-date-picker [(ngModel)]="date" (ngModelChange)="onChange($event)"></nz-date-picker>
+                    </div>
+                    <div class="searchStatus">
+                        <span>Status</span>
+                        <nz-select nzPlaceHolder="Select Status" [(ngModel)]="selectedValue">
+                            <nz-option nzValue="Active" nzLabel="Active"></nz-option>
+                            <nz-option nzValue="deleted" nzLabel="Deleted"></nz-option>
+                            <nz-option nzValue="unverified" nzLabel="Unverified"></nz-option>
+                        </nz-select>
+                    </div>
+                    <div class="searchName">
+                        <nz-input-group [nzPrefix]="suffixIconSearch">
+                            <input type="text" nz-input placeholder="input search text" />
+                        </nz-input-group>
+                        <ng-template #suffixIconSearch>
+                            <i nz-icon nzType="search"></i>
+                        </ng-template>
+                    </div>
+                </div>
+                <div class="addEmployee">
+                    <button nz-button nzType="primary"><i nz-icon nzType="plus"></i>Multiple Employees</button>
+                    <button nz-button nzType="primary"><i nz-icon nzType="plus"></i>New Employee</button>
+                </div>
+            </div>
+            <div class="inputNum">
+                <span>show</span>
+                <nz-input-number [(ngModel)]="demoValue" [nzMin]="1" [nzMax]="100" [nzStep]="1"></nz-input-number>
+                <span> entries</span>
+            </div>
+            <hr>
+            <div class="tableEmployees">
+                <nz-table #basicTable [nzData]="employeesList">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Contact Info</th>
+                            <th>Clocked In</th>
+                            <th></th>
+                            <th>Clocked Out</th>
+                            <th>Break Time</th>
+                            <th>Hours Worked</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of employeesList">
+                            <td>{{data.name}}</td>
+                            <td>{{data.contactInfo}}</td>
+                            <td><button class="viewHoursButton">View Hours</button></td>
+                            <td>{{data.clockedIn}}</td>
+
+                            <td>{{data.clockedOut}}</td>
+                            <td>{{data.breakTime}}</td>
+                            <td>{{data.HoursWorked.hours}}h {{data.HoursWorked.min}}m</td>
+                            <td><button class="statusInfo">{{data.status}} </button></td>
+                            <td class="actionsIcons"><i nz-icon nzType="edit" nzTheme="outline"
+                                    style="color: #34b484;"></i><i nz-icon nzType="delete" nzTheme="outline" style="color: red;"></i></td>
+                        </tr>
+                    </tbody>
+                </nz-table>
+            </div>
+        </div>
+
+    </div>
+</nz-content>

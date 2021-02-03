@@ -2,16 +2,19 @@ nz-content {
   height: 100%;
   position: relative;
   padding: 10px; 
+  background-color: #f5f4f7;
 }
 
 .inner-content {
   height: 100%;
   width: 100%;
+  background-color: #f5f4f7;
 }
 .header {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  background-color: #f5f4f7;
 }
 .title {
   color: #000000;
@@ -19,6 +22,7 @@ nz-content {
   font-weight: bold;
   letter-spacing: 0;
   line-height: 19px;
+  background-color: #f5f4f7;
 }
 
 .cards {
