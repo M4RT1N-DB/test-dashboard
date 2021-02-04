@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Color } from 'ng2-charts';
 class Employees {
+  avatar:string='';
   name: string = '';
   contactInfo: string = '';
   clockedIn: string = '';
@@ -32,28 +33,28 @@ export class EmployeesComponent implements OnInit {
   selectedValue = null;
   demoValue: number = 10;
   employeesList: Employees[] = [
-    {name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Active',Color:'#34b484'}},
-    {name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Deleted',Color:'#e32424'}},
-    {name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Unverified',Color:'#efb112'}},
-    {name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Active',Color:'#34b484'}},
-    {name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Active',Color:'#34b484'}},
-    {name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Deleted',Color:'#e32424'}},
-    {name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Unverified',Color:'#efb112'}},
-    {name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Active',Color:'#34b484'}},
-    {name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Deleted',Color:'#e32424'}},
-    {name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Unverified',Color:'#efb112'}},
-    {name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Active',Color:'#34b484'}},
-    {name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Deleted',Color:'#e32424'}},
-    {name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Unverified',Color:'#efb112'}},
-    {name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Active',Color:'#34b484'}},
-    {name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Deleted',Color:'#e32424'}},
-    {name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Unverified',Color:'#efb112'}},
-    {name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Active',Color:'#34b484'}},
-    {name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Deleted',Color:'#e32424'}},
-    {name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Unverified',Color:'#efb112'}},
-    {name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Active',Color:'#34b484'}},
-    {name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Deleted',Color:'#e32424'}},
-    {name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Unverified',Color:'#efb112'}},  
+    {avatar:'s',name:'Manuel',contactInfo:'Cupidatat aliqua id irure@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Active',Color:'#34b484'}},
+    {avatar:'n',name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Deleted',Color:'#e32424'}},
+    {avatar:'s',name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Unverified',Color:'#efb112'}},
+    {avatar:'n',name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Active',Color:'#34b484'}},
+    {avatar:'n',name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Active',Color:'#34b484'}},
+    {avatar:'n',name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Deleted',Color:'#e32424'}},
+    {avatar:'s',name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Unverified',Color:'#efb112'}},
+    {avatar:'n',name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Active',Color:'#34b484'}},
+    {avatar:'s',name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Deleted',Color:'#e32424'}},
+    {avatar:'n',name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Unverified',Color:'#efb112'}},
+    {avatar:'n',name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Active',Color:'#34b484'}},
+    {avatar:'n',name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Deleted',Color:'#e32424'}},
+    {avatar:'s',name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Unverified',Color:'#efb112'}},
+    {avatar:'s',name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Active',Color:'#34b484'}},
+    {avatar:'s',name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Deleted',Color:'#e32424'}},
+    {avatar:'n',name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Unverified',Color:'#efb112'}},
+    {avatar:'n',name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Active',Color:'#34b484'}},
+    {avatar:'s',name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Deleted',Color:'#e32424'}},
+    {avatar:'s',name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Unverified',Color:'#efb112'}},
+    {avatar:'n',name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Active',Color:'#34b484'}},
+    {avatar:'n',name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Deleted',Color:'#e32424'}},
+    {avatar:'s',name:'Manuel',contactInfo:'test@gmail.com',clockedIn:'10:22 AM',clockedOut:'04:12 PM',breakTime:22,HoursWorked:{hours:6,min:22},status:{status:'Unverified',Color:'#efb112'}},  
   ];
   constructor() {}
 

@@ -29,7 +29,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
-
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 
 registerLocaleData(en);
 
@@ -59,7 +59,8 @@ registerLocaleData(en);
     NzButtonModule,
     NzInputNumberModule,
     NzTableModule,
-    NzDividerModule
+    NzDividerModule,
+    NzAvatarModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

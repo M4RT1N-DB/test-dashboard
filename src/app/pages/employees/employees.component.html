@@ -41,7 +41,8 @@
                 </div>
                 <div class="addEmployee">
                     <button nz-button nzType="primary"><i nz-icon nzType="plus"></i>Multiple Employees</button>
-                    <button nz-button nzType="primary"><i nz-icon nzType="plus"></i>New Employee</button>
+                    <button style="margin-left: 20px;" nz-button nzType="primary"><i nz-icon nzType="plus"></i>New
+                        Employee</button>
                 </div>
             </div>
             <div class="inputNum">
@@ -51,25 +52,28 @@
             </div>
             <hr>
             <div class="tableEmployees">
-                <nz-table #basicTable [nzData]="employeesList">
+                <nz-table #basicTable [nzData]="employeesList" nzShowPagination nzShowSizeChanger
+                    [nzScroll]="{x:'240px'}">
                     <thead>
                         <tr>
+                            <th nzWidth="55px"></th>
+                            <th nzWidth="120px">Name</th>
+                            <th nzWidth="360px">Contact Info</th>
                             <th></th>
-                            <th>Name</th>
-                            <th>Contact Info</th>
-                            <th></th>
-                            <th>Clocked In</th>
-                            
-                            <th>Clocked Out</th>
+                            <th nzWidth="150px">Clocked In</th>
+                            <th nzWidth="150px">Clocked Out</th>
                             <th>Break Time</th>
                             <th>Hours Worked</th>
                             <th>Status</th>
-                            <th>Actions</th>
+                            <th nzWidth="100px">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let data of employeesList">
-                            <td></td>
+                        <tr *ngFor="let data of basicTable.data">
+                            <td>
+                                <nz-avatar [nzText]="data.name[0]"
+                                    [nzSrc]="data.avatar==='s'?'assets/images/avatar.jpg':'data.name[0]'"></nz-avatar>
+                            </td>
                             <td>{{data.name}}</td>
                             <td>{{data.contactInfo}}</td>
                             <td><button class="viewHoursButton">View Hours</button></td>
@@ -78,9 +82,11 @@
                             <td>{{data.clockedOut}}</td>
                             <td>{{data.breakTime}}m</td>
                             <td>{{data.HoursWorked.hours}}h {{data.HoursWorked.min}}m</td>
-                            <td><button [ngStyle]="{'background-color':data.status.Color}" class="statusInfo">{{data.status.status}} </button></td>
+                            <td><button [ngStyle]="{'background-color':data.status.Color}"
+                                    class="statusInfo">{{data.status.status}} </button></td>
                             <td class="actionsIcons"><i nz-icon nzType="edit" nzTheme="outline"
-                                    style="color: #34b484;"></i><i nz-icon nzType="delete" nzTheme="outline" style="color: red;"></i></td>
+                                    style="color: #34b484;"></i><i nz-icon nzType="delete" nzTheme="outline"
+                                    style="color: red;"></i></td>
                         </tr>
                     </tbody>
                 </nz-table>
