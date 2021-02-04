@@ -82,14 +82,13 @@ nz-content {
   flex-direction: row;
   justify-content: space-between;
   padding: 10px;
-
 }
 
-@media screen and (max-width:1200px){
-  .employeesList-search{
+@media screen and (max-width: 1200px) {
+  .employeesList-search {
     flex-direction: column;
     align-items: center;
-    justify-content: center ;
+    justify-content: center;
   }
 }
 .search {
@@ -98,8 +97,8 @@ nz-content {
   justify-content: space-between;
   width: 60%;
 }
-@media screen and (max-width:1200px){
-  .search{
+@media screen and (max-width: 1200px) {
+  .search {
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -111,8 +110,8 @@ nz-content {
   display: flex;
   flex-direction: column;
 }
-@media screen and (max-width:1200px){
-  .searchDate{
+@media screen and (max-width: 1200px) {
+  .searchDate {
     min-width: 100%;
   }
 }
@@ -123,8 +122,10 @@ nz-content {
   display: flex;
   flex-direction: column;
 }
-@media screen and (max-width:1200px){
-  .searchStatus{min-width: 100%;
+@media screen and (max-width: 1200px) {
+  .searchStatus {
+    min-width: 100%;
+    margin: 10px 0;
   }
 }
 .searchName {
@@ -135,21 +136,21 @@ nz-content {
 .searchName nz-input-group {
   border-radius: 20px !important;
 }
-@media screen and (max-width:1200px){
-  .searchName{
+@media screen and (max-width: 1200px) {
+  .searchName {
     min-width: 100%;
+    margin-bottom: 10px;
   }
 }
 .addEmployee {
   display: flex;
   margin-top: auto;
 }
-@media screen and (max-width:960px){
-  .addEmployee{
+@media screen and (max-width: 960px) {
+  .addEmployee {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
   }
 }
 .addEmployee button {
@@ -158,40 +159,56 @@ nz-content {
   border-radius: 20px;
   border: 1px solid transparent;
 }
-@media screen and (max-width:960px){
-  .addEmployee button{
+@media screen and (max-width: 960px) {
+  .addEmployee button {
     min-width: 100%;
   }
 }
-.inputNum{
+.btnSec{
+
+}
+@media screen and (max-width: 960px) {
+  .btnSec { 
+    margin-top: 10px !important;
+    margin-left: 0!important;
+  }
+}
+.inputNum {
   padding: 10px;
 }
-
-.statusInfo{
+@media screen and (max-width: 1200px) {
+  .inputNum {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.statusInfo {
   width: 100%;
   color: #fff;
   background-color: #34b484;
   border-radius: 5px;
   border: 1px solid transparent;
 }
-.viewHoursButton{
+.viewHoursButton {
   color: #e53b8d;
   border: 1px solid #e53b8d;
   background-color: transparent;
   border-radius: 5px;
 }
-th{
+th {
   text-align: center !important;
-  font-weight: 600!important;
+  font-weight: 600 !important;
 }
-td{
+td {
   text-align: center;
 }
-.actionsIcons{
+.actionsIcons {
   display: flex;
   justify-content: space-around;
   margin-top: auto;
 }
-.statusInfo:hover{
+.statusInfo:hover {
   cursor: pointer;
 }
