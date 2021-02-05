@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Color } from 'ng2-charts';
 class Employees {
   avatar:string='';
   name: string = '';
@@ -27,7 +26,7 @@ export class EmployeesComponent implements OnInit {
     { title: 'Counts', cant: 2 },
     { title: 'Discounts', cant: 0 },
     { title: 'Taxes', cant: 1.62 },
-    { title: 'Gross Sales', cant: 17 },
+    { title: 'Gross Sales', cant: 17 }
   ];
   date = null;
   selectedValue = null;

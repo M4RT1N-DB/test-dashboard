@@ -14,6 +14,7 @@ import { IconsProviderModule } from './icons-provider.module';
 
 import { ContentComponent } from './pages/content/content.component';
 import { EmployeesComponent } from './pages/employees/employees.component';
+import { SalesComponent } from './pages/reports/sales/sales.component';
 
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
@@ -30,6 +31,7 @@ import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzSpaceModule } from 'ng-zorro-antd/space';
 
 registerLocaleData(en);
 
@@ -37,7 +39,8 @@ registerLocaleData(en);
   declarations: [
     AppComponent,
     ContentComponent,
-    EmployeesComponent
+    EmployeesComponent,
+    SalesComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,8 @@ registerLocaleData(en);
     NzInputNumberModule,
     NzTableModule,
     NzDividerModule,
-    NzAvatarModule
+    NzAvatarModule,
+    NzSpaceModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

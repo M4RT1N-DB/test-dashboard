@@ -1,0 +1,178 @@
+nz-content {
+  min-height: 100vh;
+  position: relative;
+  padding: 10px;
+
+  background-color: #f5f4f7;
+}
+.title {
+  color: #000000;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 19px;
+  background-color: #f5f4f7;
+}
+.inner-content {
+  height: 100%;
+  width: 100%;
+  background-color: #f5f4f7;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  background-color: #f5f4f7;
+}
+
+.gross-information {
+  width: 100%;
+
+  margin-top: 20px;
+  padding: 16px;
+  background-color: #ffffff;
+}
+.element1 {
+  margin-bottom: 30px;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 600;
+}
+.options-filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.element3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 15.5%;
+  height: 130px;
+  margin: 1rem 0.8rem 0 0;
+  padding: 16px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px 0 rgba(20, 19, 34, 0.03),
+    0 0 10px 0 rgba(20, 19, 34, 0.02);
+  border: solid 2px #e4e9f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content span {
+  color: #000000;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 15px;
+}
+.content p {
+  margin-top: 12px;
+  margin-bottom: 0;
+  color: #000000;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+.content img {
+  vertical-align: middle;
+  border-style: none;
+}
+
+.changeArrowIcon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  transform: translate(8px, -10px);
+  height: 30px;
+}
+
+.text-group {
+  padding-top: 10px;
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  background-color: #ffffff;
+}
+.graphics {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #ffffff;
+}
+.graph1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  width: 48%;
+}
+.graph {
+
+  width: 70%;
+}
+.data {
+  width: 29%;
+  padding-right: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.elem1 {
+  font-weight: 600;
+  font-size: 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.graph2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 48%;
+  min-height: 100%;
+}
+.graph2 {
+
+  width: 70%;
+}
+.data2 {
+  width: 29%;
+  height: 100%;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.elem2 {
+  font-weight: 600;
+  font-size: 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ContentComponent } from './pages/content/content.component';
 import { EmployeesComponent } from './pages/employees/employees.component';
+import { SalesComponent } from './pages/reports/sales/sales.component';
 
 const routes: Routes = [
   {path:'content',component:ContentComponent},
   {path:'employees',component:EmployeesComponent},
-  { path: '**', pathMatch: 'full', redirectTo: '/content' },
+  {path:'report/sales/gross-transactions',component:SalesComponent},
+  {path: '**', pathMatch: 'full', redirectTo: '/content' },
 ];
 
 @NgModule({
