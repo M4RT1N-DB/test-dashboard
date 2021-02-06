@@ -13,13 +13,13 @@ import { Color, Label } from 'ng2-charts';
 export class SalesComponent implements OnInit {
   data: string[] = [];
   dataCards = [
-    { title: 'Net Sales', cant: 17 },
-    { title: 'Counts', cant: 2 },
-    { title: 'Discounts', cant: 0 },
-    { title: 'Taxes', cant: 1.62 },
-    { title: 'Gross Sales', cant: 17 },
-    { title: 'data-title', cant: 15 },
-    { title: 'data title 2', cant: 8 },
+    { title: 'Net Sales', cant: 40908.72 },
+    { title: 'Discounts', cant: 16.08 },
+    { title: 'Gross Sales', cant: 40924.85 },
+    { title: 'Taxes', cant: 3600.58 },
+    { title: 'Surcharges', cant: 512.41 },
+    { title: 'Tips', cant: 1744.42 },
+    { title: 'Total Amount', cant: 46766.13 },
   ];
   date = ['2021-02-06', '2021-02-06'];
   valueDate: string = '0';
@@ -34,16 +34,16 @@ export class SalesComponent implements OnInit {
       { name: 'Grubhub', value: 16 },
     ],
     [
-      { name: 'Visa', value: 15 },
-      { name: 'Mastercard', value: 30 },
-      { name: 'Grubhub', value: 20 },
+      { name: 'Food', value: 2170 },
+      { name: 'Open Food', value: 1722 },
+      { name: 'Drinks', value: 302 },
     ],
   ];
 
   lineChartData: ChartDataSets[] = [
     {
       data: [15, 20, 30, 16],
-      label: 'TRANSITIONS BY QUANTITY',
+      label: '',
     },
   ];
 
@@ -51,12 +51,10 @@ export class SalesComponent implements OnInit {
 
   lineChartOptions: ChartOptions = {
     responsive: true,
-    scales: {
-      xAxes: [
-        {
-          position: 'bottom',
-        },
-      ],
+    legend:{
+      labels:{
+        fontColor:'black'
+      }
     },
     plugins: {
       datalabels: {},
@@ -82,14 +80,15 @@ export class SalesComponent implements OnInit {
 
   lineChartData2: ChartDataSets[] = [
     {
-      data: [15, 20, 30],
-      label: 'TRANSITIONS BY QUANTITY',
+      data: [2170, 1722, 302],
+      label: '',
     },
   ];
 
-  lineChartLabels2: Label[] = ['Cash', 'Visa', 'Mastercard'];
+  lineChartLabels2: Label[] = ['Food', 'Open Food', 'Drinks'];
 
   lineChartOptions2: ChartOptions = {
+  
     responsive: true,
     scales: {
       xAxes: [

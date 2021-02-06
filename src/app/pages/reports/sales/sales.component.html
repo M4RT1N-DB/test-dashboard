@@ -9,12 +9,12 @@
             </div>
             <div class="element2">
                 <div class="options-filter">
-                    <div>
+                    <div class="filter-options">
                         <nz-space>
                             <nz-space-item>
                                 <div class="groupSelect" style="display: flex;flex-direction: row;">
-                                    <nz-select [nzSize]="'large'" [nzSuffixIcon]='arrowUpDown' #changeDate [(ngModel)]="mode" ngModelChange
-                                        style="width: 100px;">
+                                    <nz-select [nzSize]="'large'" [nzSuffixIcon]='arrowUpDown' #changeDate
+                                        [(ngModel)]="mode" ngModelChange style="width: 100px;">
                                         <nz-option nzValue="date" nzLabel="Today">
                                         </nz-option>
                                         <nz-option nzValue="week" nzLabel="Week"></nz-option>
@@ -30,31 +30,101 @@
                                 </div>
                             </nz-space-item>
                             <nz-space-item>
-                                <nz-range-picker [nzSize]="'large'"  #rangeDate [(ngModel)]="date" [nzMode]="mode"></nz-range-picker>
+                                <nz-range-picker style="width: 250px;" [nzSize]="'large'" #rangeDate [(ngModel)]="date"
+                                    [nzMode]="mode"></nz-range-picker>
                             </nz-space-item>
                         </nz-space>
+                        <nz-select class="center-filter" nzPlaceHolder="Include Discount?" [nzSize]="'large'">
+                            <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
+                            <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+                            <nz-option nzValue="disabled" nzLabel="Disabled" nzDisabled></nz-option>
+                        </nz-select>
+                        <nz-select style="width: 200px" nzPlaceHolder="Day Part" [nzSize]="'large'">
+                            <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
+                            <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+                            <nz-option nzValue="disabled" nzLabel="Disabled" nzDisabled></nz-option>
+                        </nz-select>
                     </div>
                     <div class="option-export">
-                        <nz-select [nzSize]="'large'"  nzPlaceHolder="Select option" style="width: 150px;">
+                        <nz-select [nzSize]="'large'" nzPlaceHolder="Select option" style="width: 150px;">
                             <nz-option nzValue="export" nzLabel="Export">
                             </nz-option>
                         </nz-select>
                     </div>
                 </div>
             </div>
-            <div class="element3"> 
-                    <div class="card" *ngFor="let item of dataCards">
-                        <div class="content">
-                            <span>{{item.title}}</span>
-                            <p>{{item.cant}}</p>
-                        </div>
-                        <img src="assets/images/NetSales.svg" alt="Sales">
-                  
+            <div class="element3">
+                <div class="card" *ngFor="let item of dataCards">
+                    <div class="content">
+                        <span>{{item.title}}</span>
+                        <p>$ {{item.cant}}</p>
+                    </div>
+                    <img src="assets/images/NetSales.svg" alt="Sales">
+
                 </div>
             </div>
 
         </div>
-        <div class="text-group">
+
+
+
+        <!-- <div class="text-group">
+            <div class="text1">
+                <span style="color: #d5388e;">TRANSACTION</span><span> BY QUANTITY</span>
+            </div>
+            <div class="text2">
+                <span style="color: #d5388e;">PRODUCTS</span><span> BY QUANTITY</span>
+            </div>
+        </div> -->
+        <div class="graphics">
+            <div class="principal-container">
+                <div class="graph1">
+                    <div class="title-graph1">
+                        <span style="color: #d5388e;">TRANSACTIONS</span><span>&nbsp;BY QUANTITY</span>
+                    </div>
+                    <div class="content-graph1">
+                        <div class="graph-canvas">
+                            <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels"
+                                [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend"
+                                [chartType]="lineChartType1" [plugins]="lineChartPlugins" style="display: block;">
+                            </canvas>
+                        </div>
+                        <div class="graph-info">
+                            <div *ngFor="let inf of info[0]" class="elem1">
+                                <span style="color: #a2a5a9;">{{inf.name}}</span>
+                                <span>{{inf.value}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="graph2">
+                    <div class="title-graph2">
+                        <span style="color: #d5388e;">PRODUCTS</span><span>&nbsp;BY QUANTITY</span>
+                    </div>
+                    <div class="content-graph2">
+                        <div class="graph-canvas">
+                            <canvas baseChart [datasets]="lineChartData2" [labels]="lineChartLabels2"
+                                [options]="lineChartOptions2" [colors]="lineChartColors2" [legend]="lineChartLegend2"
+                                [chartType]="lineChartType2" [plugins]="lineChartPlugins2"
+                                style="display: block;"></canvas>
+                        </div>
+                        <div class="graph-info">
+                            <div *ngFor="let inf of info[1]" class="elem1">
+                                <span style="color: #a2a5a9;">{{inf.name}}</span>
+                                <span>$&nbsp;{{inf.value}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <!-- <div class="text-group">
             <div class="text1">
                 <span style="color: #d5388e;">TRANSACTION</span><span> BY QUANTITY</span>
             </div>
@@ -89,6 +159,6 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </nz-content>
