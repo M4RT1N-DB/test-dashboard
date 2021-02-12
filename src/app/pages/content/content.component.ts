@@ -5,7 +5,7 @@ import { Color, Label } from 'ng2-charts';
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
-  styleUrls: ['./content.component.css'],
+  styleUrls: ['./content.component.scss'],
 })
 export class ContentComponent implements OnInit {
   data = [

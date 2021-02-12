@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="left-elements">
+        <div class="icon">
+            <i nz-icon nzType="star" nzTheme="outline"></i>
+        </div>
+        <div class="search-input">
+            <nz-input-group nzSize="large" [nzPrefix]="prefixIcon">
+                <input placeholder="input here" nz-input [(ngModel)]="inputValue" />
+            </nz-input-group>
+            <ng-template #prefixIcon>
+                <i nz-icon nzType="search"></i>
+            </ng-template>
+        </div>
+    </div>
+    <div class="right-elements">
+        
+    </div>
+
+
+</div>

@@ -8,10 +8,12 @@ import { Color, Label } from 'ng2-charts';
 @Component({
   selector: 'app-sales',
   templateUrl: './sales.component.html',
-  styleUrls: ['./sales.component.css'],
+  styleUrls: ['./sales.component.scss'],
 })
 export class SalesComponent implements OnInit {
   data: string[] = [];
+  mode = 'date';
+  subtotal: number = 0;
   dataCards = [
     { title: 'Net Sales', cant: 40908.72 },
     { title: 'Discounts', cant: 16.08 },
@@ -48,47 +50,19 @@ export class SalesComponent implements OnInit {
   ];
 
   lineChartLabels: Label[] = ['Cash', 'Visa', 'Mastercard', 'Grubhub'];
-
+  lineChartLabels2: Label[] = ['Food', 'Open Food', 'Drinks'];
   lineChartOptions: ChartOptions = {
     responsive: true,
-    legend:{
-      labels:{
-        fontColor:'black'
-      }
+    legend: {
+      labels: {
+        fontColor: 'black',
+      },
     },
     plugins: {
       datalabels: {},
     },
   };
-
-  lineChartColors: Color[] = [
-    {
-      backgroundColor: ['#eb9baf', '#d4ecfc', '#fbf4db', '#d4f2db'],
-      borderColor: ['#d5388e', '#366aaa', '#cc9c4f', '#50b2ba'],
-      pointBackgroundColor: 'rgba(229,31,137)',
-      pointBorderColor: '#000',
-      pointHoverBackgroundColor: '#000',
-      pointHoverBorderColor: 'rgba(229,31,137)',
-    },
-  ];
-  //----A boolean for whether or not a legend should be displayed above the chart.
-  lineChartLegend = false;
-
-  lineChartPlugins = [];
-  //This sets the base type of the chart. The value can be pie, doughnut, bar, line, polarArea, radar or horizontalBar.
-  lineChartType1: ChartType = 'doughnut';
-
-  lineChartData2: ChartDataSets[] = [
-    {
-      data: [2170, 1722, 302],
-      label: '',
-    },
-  ];
-
-  lineChartLabels2: Label[] = ['Food', 'Open Food', 'Drinks'];
-
   lineChartOptions2: ChartOptions = {
-  
     responsive: true,
     scales: {
       xAxes: [
@@ -101,8 +75,7 @@ export class SalesComponent implements OnInit {
       datalabels: {},
     },
   };
-
-  lineChartColors2: Color[] = [
+  lineChartColors: Color[] = [
     {
       backgroundColor: ['#eb9baf', '#d4ecfc', '#fbf4db', '#d4f2db'],
       borderColor: ['#d5388e', '#366aaa', '#cc9c4f', '#50b2ba'],
@@ -112,13 +85,65 @@ export class SalesComponent implements OnInit {
       pointHoverBorderColor: 'rgba(229,31,137)',
     },
   ];
-  //----A boolean for whether or not a legend should be displayed above the chart.
-  lineChartLegend2 = false;
-
-  lineChartPlugins2 = [];
+  lineChartLegend = false;
+  lineChartPlugins = [];
+  lineChartType1: ChartType = 'doughnut';
   lineChartType2: ChartType = 'bar';
+  lineChartData2: ChartDataSets[] = [
+    {
+      data: [2170, 1722, 302],
+      label: '',
+    },
+  ];
 
-  mode = 'date';
+  tableSalesData: any[] = [
+    [
+      {
+        location: 'ABC',
+        categories: 'Burguers',
+        productCount: 2090,
+        amount: 25059
+      },
+      {
+        location: 'DEF',
+        categories: 'Coffee & Tea',
+        productCount: 366,
+        amount: 25059
+      },
+      {
+        location: 'GHI',
+        categories: 'Baguel Sandwich',
+        productCount: 194,
+        amount: 25059
+      },
+    ],
+    [
+      {
+        location: 'Location A',
+        parentCategory: 'Food',
+        avgByCover: 8.68,
+        amount: 2353.32,
+      },
+      {
+        location: 'Location B',
+        parentCategory: 'Open Food',
+        avgByCover: 4.59,
+        amount: 2353.32,
+      },
+      {
+        location: 'Location C',
+        parentCategory: 'Drinks',
+        avgByCover: 0.23,
+        amount: 707.99,
+      },
+    ],
+    [
+      { location: 'Location D', type: 'Cash', qty: 2141, amount: 2759099 },
+      { location: 'Location E', type: 'Visa', qty: 608, amount: 14859.32 },
+      { location: 'Location F', type: 'Discover', qty: 9, amount: 261.32 },
+    ],
+  ];
+
   constructor() {
     this.data = ['date', 'week', 'month', 'year'];
   }
@@ -145,7 +170,13 @@ export class SalesComponent implements OnInit {
       this.mode = this.data[index];
     }
   }
-  imprimir() {
-    console.log(this.rangeDate.picker.inputValue);
+  calcSubtotal(indice: number) {
+    this.subtotal = 0;
+      this.subtotal = this.tableSalesData[indice].reduce(
+        (acc: any, obj: any) => acc + obj.amount,
+        0);
+
+    return this.subtotal;
+  
   }
 }

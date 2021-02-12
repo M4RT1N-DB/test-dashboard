@@ -22,27 +22,25 @@
                                         <nz-option nzValue="year" nzLabel="Year"></nz-option>
                                     </nz-select>
                                     <ng-template #arrowUpDown>
-                                        <div class="changeArrowIcon">
+                                        <div class="changeArrowIcon" style="">
                                             <i nz-icon nzType="caret-up"></i>
                                             <i nz-icon nzType="caret-down"></i>
                                         </div>
                                     </ng-template>
                                 </div>
                             </nz-space-item>
-                            <nz-space-item>
+                            <nz-space-item class="abc">
                                 <nz-range-picker style="width: 250px;" [nzSize]="'large'" #rangeDate [(ngModel)]="date"
                                     [nzMode]="mode"></nz-range-picker>
                             </nz-space-item>
                         </nz-space>
                         <nz-select class="center-filter" nzPlaceHolder="Include Discount?" [nzSize]="'large'">
-                            <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
-                            <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
-                            <nz-option nzValue="disabled" nzLabel="Disabled" nzDisabled></nz-option>
+                            <nz-option nzValue="discount" nzLabel="Discount"></nz-option>
+                            <nz-option nzValue="discount" nzLabel="Discount"></nz-option>
                         </nz-select>
                         <nz-select style="width: 200px" nzPlaceHolder="Day Part" [nzSize]="'large'">
-                            <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
-                            <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
-                            <nz-option nzValue="disabled" nzLabel="Disabled" nzDisabled></nz-option>
+                            <nz-option nzValue="all" nzLabel="All"></nz-option>
+                            <nz-option nzValue="all" nzLabel="All"></nz-option>
                         </nz-select>
                     </div>
                     <div class="option-export">
@@ -57,25 +55,13 @@
                 <div class="card" *ngFor="let item of dataCards">
                     <div class="content">
                         <span>{{item.title}}</span>
-                        <p>$ {{item.cant}}</p>
+                        <p>$&nbsp;{{item.cant | number:'1.2-2'}}</p>
                     </div>
                     <img src="assets/images/NetSales.svg" alt="Sales">
 
                 </div>
             </div>
-
         </div>
-
-
-
-        <!-- <div class="text-group">
-            <div class="text1">
-                <span style="color: #d5388e;">TRANSACTION</span><span> BY QUANTITY</span>
-            </div>
-            <div class="text2">
-                <span style="color: #d5388e;">PRODUCTS</span><span> BY QUANTITY</span>
-            </div>
-        </div> -->
         <div class="graphics">
             <div class="principal-container">
                 <div class="graph1">
@@ -104,14 +90,14 @@
                     <div class="content-graph2">
                         <div class="graph-canvas">
                             <canvas baseChart [datasets]="lineChartData2" [labels]="lineChartLabels2"
-                                [options]="lineChartOptions2" [colors]="lineChartColors2" [legend]="lineChartLegend2"
-                                [chartType]="lineChartType2" [plugins]="lineChartPlugins2"
+                                [options]="lineChartOptions2" [colors]="lineChartColors" [legend]="lineChartLegend"
+                                [chartType]="lineChartType2" [plugins]="lineChartPlugins"
                                 style="display: block;"></canvas>
                         </div>
                         <div class="graph-info">
                             <div *ngFor="let inf of info[1]" class="elem1">
                                 <span style="color: #a2a5a9;">{{inf.name}}</span>
-                                <span>$&nbsp;{{inf.value}}</span>
+                                <span>$&nbsp;{{inf.value  | number:'1.2-2'}}</span>
                             </div>
                         </div>
                     </div>
@@ -119,46 +105,136 @@
             </div>
         </div>
 
-
-
-
-
-
-        <!-- <div class="text-group">
-            <div class="text1">
-                <span style="color: #d5388e;">TRANSACTION</span><span> BY QUANTITY</span>
+        <div class="table1">
+            <div class="title-table">
+                <span>Sales</span>
             </div>
-            <div class="text2">
-                <span style="color: #d5388e;">PRODUCTS</span><span> BY QUANTITY</span>
+            <div class="table">
+                <nz-table #basicTable [nzData]="tableSalesData[0]" [nzScroll]="{x:'500px'}" nzShowPagination nzShowSizeChanger>
+                    <thead>
+                        <tr>
+                            <th nzWidth="25%">Location</th>
+                            <th nzWidth="25%">Categories</th>
+                            <th nzWidth="25%">Product Count</th>
+                            <th nzWidth="25%">Amount</th> 
+                        </tr> 
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of basicTable.data">
+                            <td>{{ data.location }}</td>
+                            <td>{{ data.categories }}</td>
+                            <td>{{ data.productCount }}</td>
+                            <td>$&nbsp;{{data.amount | number:'1.2-2'}}</td>
+                        </tr>
+                        <tr class="tr-personal">
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: end !important; font-weight: bold;">Subtotal</td>
+                            <td style="font-weight: bold;">$&nbsp;{{calcSubtotal(0) | number:'1.2-2'}}</td>
+                        </tr>
+                        <tr class="tr-personal">
+                            <td></td>
+                            <td>Tax</td>
+                            <td></td>
+                            <td>$&nbsp;{{7517.70 | number:'1.2-2'}}</td>
+                        </tr>
+                        <tr class="tr-personal">
+                            <td></td>
+                            <td>Tips</td>
+                            <td></td>
+                            <td>$&nbsp;0.00 </td>
+                        </tr>
+                        <tr class="tr-personal">
+                            <td></td>
+                            <td>Surcharges</td>
+                            <td></td>
+                            <td>$&nbsp;0.00</td>
+                        </tr>
+                        <tr class="tr-personal">
+                            <td></td>
+                            <td>Tips</td>
+                            <td></td>
+                            <td>$&nbsp;0.00</td>
+                        </tr>
+                        <tr class="tr-personal">
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: end !important; font-weight: bold;">Total</td>
+                            <td style="font-weight: bold;">$&nbsp;{{(subtotal+7517.70) | number:'1.2-2'}}</td>
+                        </tr>
+                    </tbody>
+                </nz-table>
             </div>
         </div>
-        <div class="graphics">
-            <div class="graph1">
-                <div class="graph">
-                    <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels"
-                    [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend"
-                    [chartType]="lineChartType1" [plugins]="lineChartPlugins" style="display: block;"></canvas>
-                </div>
-                <div class="data">
-                    <div *ngFor="let inf of info[0]" class="elem1">
-                        <span style="color: #90a8b9;">{{inf.name}}</span>
-                        <span>{{inf.value}}</span>
-                    </div>
-                </div>
+
+
+
+
+        <div class="table1">
+            <div class="title-table">
+                <span>Category Sales</span>
             </div>
-            <div class="graph2">
-                <div class="graph">
-                    <canvas baseChart [datasets]="lineChartData2" [labels]="lineChartLabels2"
-                    [options]="lineChartOptions2" [colors]="lineChartColors2" [legend]="lineChartLegend2"
-                    [chartType]="lineChartType2" [plugins]="lineChartPlugins2" style="display: block;"></canvas>
-                </div>
-                <div class="data2">
-                    <div *ngFor="let inf of info[1]" class="elem2">
-                        <span style="color: #90a8b9;">{{inf.name}}</span>
-                        <span>{{inf.value}}</span>
-                    </div>
-                </div>
+            <div class="table">
+                <nz-table #basicTable2 [nzData]="tableSalesData[1]" [nzScroll]="{x:'500px'}" nzShowPagination nzShowSizeChanger>
+                    <thead>
+                        <tr>
+                            <th nzWidth="25%">Location</th>
+                            <th nzWidth="25%">Parent Category Name</th>
+                            <th nzWidth="25%">AVG by Cover</th>
+                            <th nzWidth="25%">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of basicTable2.data">
+                            <td>{{ data.location }}</td>
+                            <td>{{ data.parentCategory }}</td>
+                            <td>{{ data.avgByCover }}</td>
+                            <td>$&nbsp;{{data.amount | number:'1.2-2'}}</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: end !important; font-weight: bold;">Total</td>
+                            <td style="font-weight: bold;">$&nbsp;{{calcSubtotal(1) | number:'1.2-2'}}</td>
+                        </tr>
+
+                    </tbody>
+                </nz-table>
             </div>
-        </div> -->
+        </div>
+
+        <div class="table1">
+            <div class="title-table">
+                <span>Payment Method</span>
+            </div>
+            <div class="table">
+                <nz-table #basicTable3 [nzData]="tableSalesData[2]" [nzScroll]="{x:'500px'}" nzShowPagination nzShowSizeChanger>
+                    <thead>
+                        <tr>
+                            <th nzWidth="25%">Location</th>
+                            <th nzWidth="25%">Type</th>
+                            <th nzWidth="25%">Qty</th>
+                            <th nzWidth="25%">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of basicTable3.data">
+                            <td>{{ data.location }}</td>
+                            <td>{{ data.type }}</td>
+                            <td>{{ data.qty }}</td>
+                            <td>$&nbsp;{{data.amount | number:'1.2-2'}}</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: end !important; font-weight: bold;">Total</td>
+                            <td style="font-weight: bold;">$&nbsp;{{calcSubtotal(2) | number:'1.2-2'}}</td>
+                        </tr>
+
+                    </tbody>
+                </nz-table>
+            </div>
+        </div>
+
     </div>
 </nz-content>

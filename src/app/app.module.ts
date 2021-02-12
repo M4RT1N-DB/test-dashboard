@@ -15,6 +15,7 @@ import { IconsProviderModule } from './icons-provider.module';
 import { ContentComponent } from './pages/content/content.component';
 import { EmployeesComponent } from './pages/employees/employees.component';
 import { SalesComponent } from './pages/reports/sales/sales.component';
+import { TopbarComponent } from './pages/topbar/topbar.component';
 
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
@@ -40,7 +41,8 @@ registerLocaleData(en);
     AppComponent,
     ContentComponent,
     EmployeesComponent,
-    SalesComponent
+    SalesComponent,
+    TopbarComponent
   ],
   imports: [
     BrowserModule,
