@@ -49,6 +49,7 @@ nz-content {
                   height: 30px;
                 }
               }
+             
             }
             .select-center {
               width: 200px;
@@ -62,19 +63,35 @@ nz-content {
       }
       & .element2 {
         @include display-flex(row, space-between, center);
+        
+        @media screen and (max-width:1060px){
+          @include display-flex(column, center, center);
+        }
         margin-top: 20px;
         & .quantity,
         .total {
           @include display-flex(column, center, center);
           width: 47%;
           height: 200px;
-          
+
           @extend %custom-border;
           padding-bottom: 25px;
-
+          @media screen and (max-width:1060px){
+            width: 100%;
+            height: 160px;
+          }
+          @media screen and (max-width:390px){
+            height: 140px;
+          }
           & div {
             font-weight: bold;
             font-size: 20px;
+            @media screen and (max-width:1060px){
+              @include display-flex(column, center, center);
+            }
+            @media screen and (max-width:390px){
+              font-size: 15px;
+            }
             & .color-letter {
               color: #ed668f;
             }
@@ -82,6 +99,14 @@ nz-content {
           & > span {
             font-weight: bold;
             font-size: 40px;
+            @media screen and (max-width:390px){
+              font-size: 25px;
+            }
+          }
+        }
+        & .quantity {
+          @media screen and (max-width:1060px){
+            margin-bottom: 20px;
           }
         }
       }
@@ -104,8 +129,9 @@ nz-content {
               padding-top: 10px;
               @include display-flex(row, center, center);
               @extend %title-graph;
-              @media screen and (max-width: 350px) {
+              @media screen and (max-width: 380px) {
                 @include display-flex(column, center, center);
+                
               }
               span {
                 @media screen and (max-width: 450px) {
@@ -120,28 +146,33 @@ nz-content {
               @include display-flex(row, center, center);
               .graph-canvas {
                 width: 75%;
-                @media screen and (max-width: 390px) {
+                @media screen and (max-width: 580px) {
                   width: 60%;
                 }
-                @media screen and (max-width: 350px) {
+                @media screen and (max-width: 440px) {
                   display: none;
                 }
               }
               .graph-info {
                 @extend %graph-info;
-                @media screen and (max-width: 390px) {
+                @media screen and (max-width: 580px) {
                   width: 40%;
                 }
-                @media screen and (max-width: 350px) {
+                @media screen and (max-width: 440px) {
                   width: 100%;
                 }
                 & .elem1 {
-                    font-size: 14px;
                   @include display-flex(row, space-between, stretch);
                   @extend %elem1;
-                  @media screen and (max-width: 350px) {
+
+                  font-size: 12px !important;
+                  @media screen and (max-width: 580px) {
+                    font-size: 10px !important;
+                    margin-left: 10px;
+                  }
+                  @media screen and (max-width: 440px) {
                     width: 100%;
-                    font-size: 14px;
+                    font-size: 16px !important;
                     margin-left: 10px;
                   }
                 }
@@ -157,7 +188,7 @@ nz-content {
               padding-top: 10px;
               @include display-flex(row, center, center);
               @extend %title-graph;
-              @media screen and (max-width: 350px) {
+              @media screen and (max-width: 380px) {
                 @include display-flex(column, center, center);
               }
               span {
@@ -167,34 +198,41 @@ nz-content {
                 @media screen and (max-width: 350px) {
                   font-size: 13px;
                 }
+                @media screen and (max-width: 300px) {
+                  font-size: 10px;
+                }
               }
             }
             .content-graph2 {
               @include display-flex(row, center, center);
               .graph-canvas {
                 width: 75%;
-                @media screen and (max-width: 390px) {
+                @media screen and (max-width: 580px) {
                   width: 60%;
                 }
-                @media screen and (max-width: 350px) {
+                @media screen and (max-width: 440px) {
                   display: none;
                 }
               }
               .graph-info {
                 @extend %graph-info;
-                @media screen and (max-width: 390px) {
+                @media screen and (max-width: 580px) {
                   width: 40%;
                 }
-                @media screen and (max-width: 350px) {
+                @media screen and (max-width: 440px) {
                   width: 100%;
                 }
                 & .elem1 {
-                    font-size: 14px;
                   @include display-flex(row, space-between, stretch);
                   @extend %elem1;
-                  @media screen and (max-width: 350px) {
+                  font-size: 12px !important;
+                  @media screen and (max-width: 580px) {
+                    font-size: 10px !important;
+                    margin-left: 10px;
+                  }
+                  @media screen and (max-width: 440px) {
                     width: 100%;
-                    font-size: 14px;
+                    font-size: 16px !important;
                     margin-left: 10px;
                   }
                 }
@@ -203,45 +241,47 @@ nz-content {
           }
         }
       }
-      
     }
 
     & .table1 {
-        background-color: $bg-color;
-        padding: 10px;
-        margin-top: 30px;
-        & .title-table {
-          @extend %comun-title-section;
+      background-color: $bg-color;
+      padding: 10px;
+      margin-top: 30px;
+      & .title-table {
+        @extend %comun-title-section;
+      }
+      & .table {
+        & nz-table ::ng-deep .ant-table-thead > tr > th {
+          padding: 0;
+          background: #f0f2f4;
+          height: 45px;
+          font-weight: bold;
+          text-align: start;
+          padding-left: 15px;
+          font-size: 12px;
+          @media screen and (max-width: 720px) {
+            height: 30px;
+            font-size: 10px;
+            text-align: center;
+            padding-left: 0;
+          }
         }
-        & .table {
-          & nz-table ::ng-deep .ant-table-thead > tr > th {
-            padding: 0;
-            background: #f0f2f4;
-            height: 45px;
-            font-weight: bold;
-            text-align: start;
-            padding-left: 15px;
-            @media screen and (max-width: 720px) {
-              height: 30px;
-              font-size: 15px;
-            }
+        & nz-table ::ng-deep .ant-table-tbody > tr > td {
+          height: 45px;
+          padding-left: 15px;
+          text-align: start;
+          @media screen and (max-width: 720px) {
+            height: 20px;
+            font-size: 12px;
           }
-          & nz-table ::ng-deep .ant-table-tbody > tr > td {
-            height: 45px;
-            padding-left: 15px;
-            text-align: start;
-            @media screen and (max-width: 720px) {
-              height: 20px;
-              font-size: 12px;
-            }
-          }
-          & nz-table tbody > .tr-personal > td {
-            @media screen and (max-width: 720px) {
-              height: 20px;
-              font-size: 12px;
-            }
+        }
+        & nz-table tbody > .tr-personal > td {
+          @media screen and (max-width: 720px) {
+            height: 20px;
+            font-size: 12px;
           }
         }
       }
+    }
   }
 }
