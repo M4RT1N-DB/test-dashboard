@@ -16,6 +16,9 @@ import { ContentComponent } from './pages/content/content.component';
 import { EmployeesComponent } from './pages/employees/employees.component';
 import { SalesComponent } from './pages/reports/sales/sales.component';
 import { TopbarComponent } from './pages/topbar/topbar.component';
+import {ActionsComponent} from './pages/topbar/actions/actions.component'
+import { DiscountComponent } from "./pages/exceptions/discount/discount.component";
+import { FooterComponent } from "./pages/footer/footer.component";
 
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
@@ -33,6 +36,9 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
+import { NzDrawerModule } from 'ng-zorro-antd/drawer';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
 
 registerLocaleData(en);
 
@@ -42,7 +48,10 @@ registerLocaleData(en);
     ContentComponent,
     EmployeesComponent,
     SalesComponent,
-    TopbarComponent
+    TopbarComponent,
+    ActionsComponent,
+    DiscountComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +75,10 @@ registerLocaleData(en);
     NzTableModule,
     NzDividerModule,
     NzAvatarModule,
-    NzSpaceModule
+    NzSpaceModule,
+    NzDrawerModule,
+    NzDropDownModule,
+    NzTabsModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

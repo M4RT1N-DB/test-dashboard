@@ -1,0 +1,247 @@
+@import "src/app/styles/variables";
+@import "src/app/styles/heredity";
+@import "src/app/styles/mixins";
+
+nz-content {
+  min-height: 100vh;
+  position: relative;
+  padding: 10px;
+  background-color: $no-bg-color;
+  & .inner-content {
+    @extend %total-height-width;
+    background-color: $no-bg-color;
+    & .header {
+      width: 100%;
+      @include display-flex(row, space-between, stretch);
+      background-color: $no-bg-color;
+      & .title {
+        @extend %comun-top-title;
+      }
+    }
+    & .gross-information {
+      width: 100%;
+      margin-top: 20px;
+      padding: 16px;
+      @extend %custom-border;
+      & .element1 {
+        .options-filter {
+          @include display-flex(row, space-between, stretch);
+          @media screen and (max-width: 1270px) {
+            width: 100%;
+            @include display-flex(column, center, center);
+          }
+          .filter-options {
+            @include display-flex(row, center, center);
+            @media screen and (max-width: 1270px) {
+              width: 100%;
+              flex-direction: column;
+              margin-bottom: 10px;
+            }
+            nz-space {
+              @media screen and (max-width: 470px) {
+                @include display-flex(column, center, center);
+              }
+              .groupSelect {
+                .changeArrowIcon {
+                  @include display-flex(column, center, center);
+                  color: #000000;
+                  transform: translate(7px, -10px);
+                  height: 30px;
+                }
+              }
+            }
+            .select-center {
+              width: 200px;
+              margin-left: 20px;
+              @media screen and (max-width: 1270px) {
+                margin: 10px 0;
+              }
+            }
+          }
+        }
+      }
+      & .element2 {
+        @include display-flex(row, space-between, center);
+        margin-top: 20px;
+        & .quantity,
+        .total {
+          @include display-flex(column, center, center);
+          width: 47%;
+          height: 200px;
+          
+          @extend %custom-border;
+          padding-bottom: 25px;
+
+          & div {
+            font-weight: bold;
+            font-size: 20px;
+            & .color-letter {
+              color: #ed668f;
+            }
+          }
+          & > span {
+            font-weight: bold;
+            font-size: 40px;
+          }
+        }
+      }
+      & .graphics {
+        margin-top: 30px;
+        min-width: 100%;
+        .principal-container {
+          @extend %total-height-width;
+          @include display-flex(row, space-between, stretch);
+          @media screen and (max-width: 1600px) {
+            @include display-flex(column, center, center);
+          }
+          .graph1 {
+            @extend %graph-special;
+            @media screen and (max-width: 1600px) {
+              width: 100%;
+              margin-bottom: 15px;
+            }
+            & .title-graph1 {
+              padding-top: 10px;
+              @include display-flex(row, center, center);
+              @extend %title-graph;
+              @media screen and (max-width: 350px) {
+                @include display-flex(column, center, center);
+              }
+              span {
+                @media screen and (max-width: 450px) {
+                  font-size: 15px;
+                }
+                @media screen and (max-width: 350px) {
+                  font-size: 13px;
+                }
+              }
+            }
+            .content-graph1 {
+              @include display-flex(row, center, center);
+              .graph-canvas {
+                width: 75%;
+                @media screen and (max-width: 390px) {
+                  width: 60%;
+                }
+                @media screen and (max-width: 350px) {
+                  display: none;
+                }
+              }
+              .graph-info {
+                @extend %graph-info;
+                @media screen and (max-width: 390px) {
+                  width: 40%;
+                }
+                @media screen and (max-width: 350px) {
+                  width: 100%;
+                }
+                & .elem1 {
+                    font-size: 14px;
+                  @include display-flex(row, space-between, stretch);
+                  @extend %elem1;
+                  @media screen and (max-width: 350px) {
+                    width: 100%;
+                    font-size: 14px;
+                    margin-left: 10px;
+                  }
+                }
+              }
+            }
+          }
+          .graph2 {
+            @extend %graph-special;
+            @media screen and (max-width: 1600px) {
+              width: 100%;
+            }
+            .title-graph2 {
+              padding-top: 10px;
+              @include display-flex(row, center, center);
+              @extend %title-graph;
+              @media screen and (max-width: 350px) {
+                @include display-flex(column, center, center);
+              }
+              span {
+                @media screen and (max-width: 450px) {
+                  font-size: 15px;
+                }
+                @media screen and (max-width: 350px) {
+                  font-size: 13px;
+                }
+              }
+            }
+            .content-graph2 {
+              @include display-flex(row, center, center);
+              .graph-canvas {
+                width: 75%;
+                @media screen and (max-width: 390px) {
+                  width: 60%;
+                }
+                @media screen and (max-width: 350px) {
+                  display: none;
+                }
+              }
+              .graph-info {
+                @extend %graph-info;
+                @media screen and (max-width: 390px) {
+                  width: 40%;
+                }
+                @media screen and (max-width: 350px) {
+                  width: 100%;
+                }
+                & .elem1 {
+                    font-size: 14px;
+                  @include display-flex(row, space-between, stretch);
+                  @extend %elem1;
+                  @media screen and (max-width: 350px) {
+                    width: 100%;
+                    font-size: 14px;
+                    margin-left: 10px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      
+    }
+
+    & .table1 {
+        background-color: $bg-color;
+        padding: 10px;
+        margin-top: 30px;
+        & .title-table {
+          @extend %comun-title-section;
+        }
+        & .table {
+          & nz-table ::ng-deep .ant-table-thead > tr > th {
+            padding: 0;
+            background: #f0f2f4;
+            height: 45px;
+            font-weight: bold;
+            text-align: start;
+            padding-left: 15px;
+            @media screen and (max-width: 720px) {
+              height: 30px;
+              font-size: 15px;
+            }
+          }
+          & nz-table ::ng-deep .ant-table-tbody > tr > td {
+            height: 45px;
+            padding-left: 15px;
+            text-align: start;
+            @media screen and (max-width: 720px) {
+              height: 20px;
+              font-size: 12px;
+            }
+          }
+          & nz-table tbody > .tr-personal > td {
+            @media screen and (max-width: 720px) {
+              height: 20px;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+  }
+}

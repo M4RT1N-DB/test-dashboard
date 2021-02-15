@@ -1,0 +1,28 @@
+.container {
+  margin-top: 12px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px #015ad6;
+  background-color: #fff;
+  & .left-elements {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    & .icon {
+      margin-left: 15px;
+    }
+    & .search-input {
+      margin-left: 15px;
+    }
+  }
+  & .right-elements {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    & div {
+      margin-right: 20px;
+    }
+  }
+}

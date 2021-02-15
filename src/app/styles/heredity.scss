@@ -20,16 +20,19 @@
   font-size: 16px;
   font-weight: 600;
 }
-
-%graph-special {
-  width: 46%;
-  height: 100%;
-  @include display-flex(column, center, stretch);
+%custom-border{
   border-radius: 5px;
   background-color: $bg-color;
   box-shadow: 0 4px 10px 0 rgba(20, 19, 34, 0.03),
     0 0 10px 0 rgba(20, 19, 34, 0.02);
   border: solid 2px #e4e9f0;
+}
+
+%graph-special {
+  width: 47%;
+  height: 100%;
+  @include display-flex(column, center, stretch);
+ @extend %custom-border;
   padding-bottom: 25px;
 }
 %title-graph {

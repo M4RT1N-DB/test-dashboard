@@ -262,14 +262,14 @@ nz-content {
         @extend %comun-title-section;
       }
       & .table {
-        & nz-table ::ng-deep .ant-table-thead>tr>th {
+        & nz-table ::ng-deep .ant-table-thead > tr > th {
           padding: 0;
-          background:#F0F2F4;
+          background: #f0f2f4;
           height: 45px;
           font-weight: bold;
           text-align: start;
           padding-left: 15px;
-          @media screen and (max-width:720px){
+          @media screen and (max-width: 720px) {
             height: 30px;
             font-size: 15px;
           }
@@ -278,13 +278,13 @@ nz-content {
           height: 45px;
           padding-left: 15px;
           text-align: start;
-          @media screen and (max-width:720px){
+          @media screen and (max-width: 720px) {
             height: 20px;
             font-size: 12px;
           }
         }
-        & nz-table tbody >.tr-personal>td{
-          @media screen and (max-width:720px){
+        & nz-table tbody > .tr-personal > td {
+          @media screen and (max-width: 720px) {
             height: 20px;
             font-size: 12px;
           }

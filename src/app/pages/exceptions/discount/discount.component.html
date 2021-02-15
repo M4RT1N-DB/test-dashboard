@@ -1,0 +1,224 @@
+<nz-content>
+    <div class="inner-content">
+        <div class="header">
+            <h3 class="title">REPORTS | EXCEPTIONS | DISCOUNTS</h3>
+        </div>
+
+        <div class="gross-information">
+            <div class="element1">
+                <div class="options-filter">
+                    <div class="filter-options">
+                        <nz-space>
+                            <nz-space-item>
+                                <div class="groupSelect" style="display: flex;flex-direction: row;">
+                                    <nz-select [nzSize]="'large'" [nzSuffixIcon]='arrowUpDown' #changeDate
+                                        [(ngModel)]="mode" ngModelChange style="width: 100px;">
+                                        <nz-option nzValue="date" nzLabel="Today">
+                                        </nz-option>
+                                        <nz-option nzValue="week" nzLabel="Week"></nz-option>
+                                        <nz-option nzValue="month" nzLabel="Month"></nz-option>
+                                        <nz-option nzValue="year" nzLabel="Year"></nz-option>
+                                    </nz-select>
+                                    <ng-template #arrowUpDown>
+                                        <div class="changeArrowIcon" style="">
+                                            <i nz-icon nzType="caret-up"></i>
+                                            <i nz-icon nzType="caret-down"></i>
+                                        </div>
+                                    </ng-template>
+                                </div>
+                            </nz-space-item>
+                            <nz-space-item class="abc">
+                                <nz-range-picker style="width: 250px;" [nzSize]="'large'" #rangeDate [(ngModel)]="date"
+                                    [nzMode]="mode"></nz-range-picker>
+                            </nz-space-item>
+                        </nz-space>
+
+
+                        <nz-select class="center-filter select-center" nzPlaceHolder="Select Server" [nzSize]="'large'">
+                            <nz-option nzValue="discount" nzLabel="Discount"></nz-option>
+                            <nz-option nzValue="discount" nzLabel="Discount"></nz-option>
+                        </nz-select>
+                        <nz-select class="select-center" nzPlaceHolder="Select Authorizer" [nzSize]="'large'">
+                            <nz-option nzValue="all" nzLabel="All"></nz-option>
+                            <nz-option nzValue="all" nzLabel="All"></nz-option>
+                        </nz-select>
+                        <nz-select class="select-center" nzPlaceHolder="Select Reason" [nzSize]="'large'">
+                            <nz-option nzValue="all" nzLabel="All"></nz-option>
+                            <nz-option nzValue="all" nzLabel="All"></nz-option>
+                        </nz-select>
+                    </div>
+                    <div class="option-export">
+                        <nz-select [nzSize]="'large'" nzPlaceHolder="Select option" style="width: 150px;">
+                            <nz-option nzValue="export" nzLabel="Export">
+                            </nz-option>
+                        </nz-select>
+                    </div>
+                </div>
+            </div>
+            <div class="element2">
+                <div class="quantity">
+                    <div>
+                        <span class="color-letter">DISCOUNT -&nbsp;</span><span>QUANTITY</span>
+                    </div>
+                    <span>1</span>
+                </div>
+                <div class="total">
+                    <div>
+                        <span class="color-letter">DISCOUNTS DASHBOARD -&nbsp;</span><span>TOTAL</span>
+                    </div>
+                    <span>$&nbsp;13.00</span>
+                </div>
+            </div>
+
+
+            <div class="graphics">
+                <div class="principal-container">
+                    <div class="graph1">
+                        <div class="title-graph1">
+                            <span style="color: #d5388e;">DISCOUNT -</span><span>&nbsp; QUANTITY</span>
+                        </div>
+                        <div class="content-graph1">
+                            <div class="graph-canvas">
+                                <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels"
+                                    [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend"
+                                    [chartType]="lineChartType1" [plugins]="lineChartPlugins" style="display: block;">
+                                </canvas>
+                            </div>
+                            <div class="graph-info">
+                                <div *ngFor="let inf of info[0]" class="elem1">
+                                    <span style="color: #a2a5a9;">{{inf.name}}</span>
+                                    <span>{{inf.value}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="graph2">
+                        <div class="title-graph2">
+                            <span style="color: #d5388e;">DISCOUNT DASHBOARD -</span><span>&nbsp;TOTAL</span>
+                        </div>
+                        <div class="content-graph2">
+                            <div class="graph-canvas">
+                                <canvas baseChart [datasets]="lineChartData2" [labels]="lineChartLabels2"
+                                    [options]="lineChartOptions2" [colors]="lineChartColors" [legend]="lineChartLegend"
+                                    [chartType]="lineChartType2" [plugins]="lineChartPlugins"
+                                    style="display: block;"></canvas>
+                            </div>
+                            <div class="graph-info">
+                                <div *ngFor="let inf of info[1]" class="elem1">
+                                    <span style="color: #a2a5a9;">{{inf.name}}</span>
+                                    <span>{{inf.value }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="table1">
+            <div class="title-table">
+                <span>Discount Summary</span>
+            </div>
+            <div class="table">
+                <nz-table #basicTable1 [nzData]="tablesData[0]" [nzScroll]="{x:'500px'}" nzShowPagination
+                    nzShowSizeChanger>
+                    <thead>
+                        <tr>
+                            <th nzWidth="25%">Discount Name</th>
+                            <th nzWidth="25%">Count</th>
+                            <th nzWidth="25%">Discount Amount</th>
+                            <th nzWidth="25%">Percent of Total Sales</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of basicTable1.data">
+                            <td>{{ data.discount }}</td>
+                            <td>{{ data.count }}</td>
+                            <td>{{ data.discountAmount | number:'1.2-2'}}</td>
+                            <td>{{data.porcent | number:'1.2-2'}}&nbsp;%</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: start !important; font-weight: bold;">Total</td>
+                            <td style="font-weight: bold;">&nbsp;{{calcSubtotal(0)}}</td>
+                            <td style="font-weight: bold;">&nbsp;{{calcSubtotal(1) | number:'1.2-2'}}&nbsp;</td>
+                            <td style="font-weight: bold;">&nbsp;{{calcSubtotal(2) | number:'1.2-2'}}&nbsp;%</td>
+                        </tr>
+                    </tbody>
+                </nz-table>
+            </div>
+        </div>
+
+        <div class="table1">
+            <div class="title-table">
+                <span>Discount Summary</span>
+            </div>
+            <div class="table">
+                <nz-table #basicTable2 [nzData]="tablesData[1]" [nzScroll]="{x:'500px'}" nzShowPagination
+                    nzShowSizeChanger>
+                    <thead>
+                        <tr>
+                            <th nzWidth="14.28%">Employee</th>
+                            <th nzWidth="14.28%">Check Discount</th>
+                            <th nzWidth="14.28%">Chekc Dis.Amount</th>
+                            <th nzWidth="14.28%">Item Discount</th>
+                            <th nzWidth="14.28%">Item Disc.Amount</th>
+                            <th nzWidth="14.28%">Total Disc.Amount</th>
+                            <th nzWidth="14.28%">Percent of Sales Sales</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of basicTable2.data">
+                            <td>{{ data.employee }}</td>
+                            <td>$&nbsp;{{ data.check | number:'1.2-2'}}</td>
+                            <td>$&nbsp;{{ data.checkAmount | number:'1.2-2'}}</td>
+                            <td>$&nbsp;{{data.itemDiscount | number:'1.2-2'}}</td>
+                            <td>$&nbsp;{{data.itemAmount | number:'1.2-2'}}</td>
+                            <td>$&nbsp;{{data.totalAmount | number:'1.2-2'}}</td>
+                            <td>$&nbsp;{{data.porcent | number:'1.2-2'}}</td>
+                        </tr>
+                    </tbody>
+                </nz-table>
+            </div>
+        </div>
+
+        <div class="table1">
+            <div class="title-table">
+                <span>Discount Summary</span>
+            </div>
+            <div class="table">
+                <nz-table #basicTable3 [nzData]="tablesData[2]" [nzScroll]="{x:'500px'}" nzShowPagination
+                    nzShowSizeChanger>
+                    <thead>
+                        <tr>
+                            <th nzWidth="11.11%">Date</th>
+                            <th nzWidth="11.11%">Employee</th>
+                            <th nzWidth="11.11%">Reason</th>
+                            <th nzWidth="11.11%">Revenue Center</th>
+                            <th nzWidth="11.11%">Authorized By</th>
+                            <th nzWidth="11.11%">Order Number</th>
+                            <th nzWidth="11.11%">Type</th>
+                            <th nzWidth="11.11%">Items</th>
+                            <th nzWidth="11.11%">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of basicTable3.data">
+                            <td>{{ data.date | date: 'dd/MM/yyyy'}}</td>
+                            <td>{{ data.employee }}</td>
+                            <td>{{ data.reason }}</td>
+                            <td>{{data.revenue }}</td>
+                            <td>{{data.authorized }}</td>
+                            <td>{{data.orderNumber}}</td>
+                            <td>{{data.type }}</td>
+                            <td>{{data.items}}</td>
+                            <td>{{data.amount | number:'1.2-2'}}</td>
+                        </tr>
+                    </tbody>
+                </nz-table>
+            </div>
+        </div>
+
+    </div>
+</nz-content>

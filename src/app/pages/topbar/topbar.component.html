@@ -4,16 +4,92 @@
             <i nz-icon nzType="star" nzTheme="outline"></i>
         </div>
         <div class="search-input">
-            <nz-input-group nzSize="large" [nzPrefix]="prefixIcon">
-                <input placeholder="input here" nz-input [(ngModel)]="inputValue" />
+            <nz-input-group nzSize="default" style="max-width:240px" [nzPrefix]="prefixIcon" (click)="open()">
+                <input placeholder="Search" nz-input [(ngModel)]="inputValue" />
             </nz-input-group>
+            <nz-drawer [nzClosable]="true" [nzVisible]="visible" nzPlacement="top" (nzOnClose)="close()"
+                nzHeight="100vh">
+                <ng-container *nzDrawerContent>
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                </ng-container>
+            </nz-drawer>
             <ng-template #prefixIcon>
                 <i nz-icon nzType="search"></i>
             </ng-template>
         </div>
     </div>
     <div class="right-elements">
-        
+        <div>
+            <div nz-dropdown [nzDropdownMenu]="menu" nzTrigger="click" [nzClickHide]="true">
+                EN
+                <i nz-icon nzType="down"></i>
+            </div>
+            <nz-dropdown-menu #menu="nzDropdownMenu">
+                <ul nz-menu nzSelectable style="width: 100px;">
+                    <li nz-menu-item>EN - English</li>
+                    <li nz-menu-item>FR - French</li>
+                </ul>
+            </nz-dropdown-menu>
+        </div>
+        <div>
+            <div nz-dropdown [nzDropdownMenu]="menu2" nzTrigger="click">
+                <i nz-icon nzType="bell"></i>
+                <i nz-icon nzType="down"></i>
+            </div>
+            <nz-dropdown-menu #menu2="nzDropdownMenu">
+                <app-actions></app-actions>
+            </nz-dropdown-menu>
+        </div>
+        <div>
+            <div nz-dropdown [nzDropdownMenu]="menu3" nzTrigger="click">
+                <nz-badge [nzCount]="8" nzShowZero>
+                    <nz-avatar [nzShape]="'square'" [nzSize]="'large'" [nzIcon]="'user'"></nz-avatar>
+                </nz-badge>
+                <i nz-icon nzType="down"></i>
+            </div>
+            <nz-dropdown-menu #menu3="nzDropdownMenu">
+                <ul nz-menu>
+                    <li nz-menu-item>
+                        <strong>Hello, Anonymous</strong>
+                        <div>
+                            <strong>Billing Plan:</strong>
+                            Professional
+                        </div>
+                        <div>
+                            <strong>Role:</strong>
+                            —
+                        </div>
+                    </li>
+                    <li nz-menu-divider></li>
+                    <li nz-menu-item>
+                        <div>
+                            <strong>Email: </strong>
+                            —<br />
+                            <strong>Phone: </strong>
+                            —
+                        </div>
+                    </li>
+                    <li nz-menu-divider></li>
+                    <li nz-menu-item>
+                        <div class="edit-profile">
+                            <i nz-icon nzType="user"></i>
+                            Edit Profile:
+                        </div>
+                    </li>
+                    <li nz-menu-divider></li>
+                    <li nz-menu-item>
+                        <div class="edit-profile">
+                            <i nz-icon nzType="logout"></i>
+                            Logout:
+                        </div>
+                    </li>
+                </ul>
+            </nz-dropdown-menu>
+        </div>
+
+
     </div>
 
 
